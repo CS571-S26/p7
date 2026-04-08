@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  background-color: #f8f9fa;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+.card {
+  border: none;
+}
