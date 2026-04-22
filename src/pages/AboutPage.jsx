@@ -8,19 +8,25 @@ function AboutPage() {
       <Card className="shadow-sm">
         <Card.Body>
           <Card.Text>
-            This project is the Money Path Simulator which hels people get a better understanding of their spending and how it affects their savings over time.
+            This project is the Money Path Simulator, which helps people get a better
+            understanding of their spending and how it affects their savings over time.
           </Card.Text>
 
           <Card.Text>
-            Right now, this is still an early version. Currently I have focused on setting up the overall structure using React, adding routing between pages, and building with React Bootstrap.
+            Right now, this is still an early version. So far, I have focused on setting
+            up the overall structure using React, adding routing between pages, and
+            building the layout with React Bootstrap.
           </Card.Text>
 
           <Card.Text>
-            I also created some reusable components like the navigation bar, summary cards, and an expense list to keep things organized.
+            I also created reusable components like the navigation bar, summary cards,
+            expense form, income form, budget overview, and an expense list to keep
+            everything organized.
           </Card.Text>
 
           <Card.Text>
-            Going forward, I plan to add more interactivity, like letting users input their own data and actually simulate different financial scenarios.
+            Going forward, I plan to add more interactivity and allow users to explore
+            different budgeting scenarios in a more realistic way.
           </Card.Text>
         </Card.Body>
       </Card>

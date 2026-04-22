@@ -6,7 +6,8 @@ function HomePage({ monthlyIncome, totalExpenses, savingsLeft, expenseCount }) {
     <Container className="py-4">
       <h1 className="mb-3">Home</h1>
       <p className="mb-4">
-        This is the Money Path Simulator!!
+        Welcome to Money Path Simulator. This project helps users keep track of their
+        monthly income, expenses, and remaining savings.
       </p>
 
       <Row className="g-4">

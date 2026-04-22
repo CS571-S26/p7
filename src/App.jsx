@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import { useState } from 'react'
 import NavigationBar from './components/NavigationBar'
 import HomePage from './pages/HomePage'
@@ -14,7 +14,7 @@ function App() {
   const savingsLeft = parsedIncome - totalExpenses
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <NavigationBar />
       <Routes>
         <Route
@@ -37,12 +37,13 @@ function App() {
               expenses={expenses}
               setExpenses={setExpenses}
               totalExpenses={totalExpenses}
+              savingsLeft={savingsLeft}
             />
           }
         />
         <Route path="/about" element={<AboutPage />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
