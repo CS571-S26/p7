@@ -3,14 +3,17 @@ import { Card, Form } from 'react-bootstrap'
 function IncomeForm({ monthlyIncome, setMonthlyIncome }) {
   return (
     <Card className="p-3 shadow-sm h-100">
-      <h5 className="mb-3">Set Monthly Income</h5>
+      <h2 className="h5 mb-3">Set Monthly Income</h2>
+
       <Form>
-        <Form.Control
-          type="number"
-          placeholder="Enter monthly income"
-          value={monthlyIncome}
-          onChange={(event) => setMonthlyIncome(event.target.value)}
-        />
+        <Form.Group controlId="monthlyIncomeInput">
+          <Form.Label>Monthly income</Form.Label>
+          <Form.Control
+            type="number"
+            value={monthlyIncome}
+            onChange={(event) => setMonthlyIncome(event.target.value)}
+          />
+        </Form.Group>
       </Form>
     </Card>
   )

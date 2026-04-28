@@ -27,22 +27,25 @@ function ExpenseForm({ expenses, setExpenses }) {
 
   return (
     <Card className="p-3 shadow-sm h-100">
-      <h5 className="mb-3">Add Expense</h5>
-      <Form onSubmit={addExpense}>
-        <Form.Control
-          placeholder="Expense name"
-          value={expenseName}
-          onChange={(event) => setExpenseName(event.target.value)}
-          className="mb-2"
-        />
+      <h2 className="h5 mb-3">Add Expense</h2>
 
-        <Form.Control
-          type="number"
-          placeholder="Expense amount"
-          value={expenseAmount}
-          onChange={(event) => setExpenseAmount(event.target.value)}
-          className="mb-3"
-        />
+      <Form onSubmit={addExpense}>
+        <Form.Group controlId="expenseNameInput" className="mb-2">
+          <Form.Label>Expense name</Form.Label>
+          <Form.Control
+            value={expenseName}
+            onChange={(event) => setExpenseName(event.target.value)}
+          />
+        </Form.Group>
+
+        <Form.Group controlId="expenseAmountInput" className="mb-3">
+          <Form.Label>Expense amount</Form.Label>
+          <Form.Control
+            type="number"
+            value={expenseAmount}
+            onChange={(event) => setExpenseAmount(event.target.value)}
+          />
+        </Form.Group>
 
         <Button type="submit">Add Expense</Button>
       </Form>

@@ -1,13 +1,15 @@
 import { Container, Row, Col } from 'react-bootstrap'
 import SummaryCard from '../components/SummaryCard'
+import BudgetHealthCard from '../components/BudgetHealthCard'
+import GoalProgressCard from '../components/GoalProgressCard'
 
-function HomePage({ monthlyIncome, totalExpenses, savingsLeft, expenseCount }) {
+function HomePage({ monthlyIncome, totalExpenses, savingsLeft, expenseCount, savingsGoal }) {
   return (
     <Container className="py-4">
       <h1 className="mb-3">Home</h1>
       <p className="mb-4">
-        Welcome to Money Path Simulator. This project helps users keep track of their
-        monthly income, expenses, and remaining savings.
+        Welcome to Money Path Simulator. This app helps users track income,
+        expenses, savings, and progress toward a monthly savings goal.
       </p>
 
       <Row className="g-4">
@@ -35,11 +37,24 @@ function HomePage({ monthlyIncome, totalExpenses, savingsLeft, expenseCount }) {
       </Row>
 
       <Row className="g-4 mt-1">
-        <Col md={6}>
+        <Col md={4}>
           <SummaryCard
             title="Expense Entries"
             value={expenseCount}
-            text="The current number of expenses the user has entered."
+            text="The current number of expenses entered."
+          />
+        </Col>
+        <Col md={4}>
+          <BudgetHealthCard
+            savingsLeft={savingsLeft}
+            totalExpenses={totalExpenses}
+            monthlyIncome={monthlyIncome}
+          />
+        </Col>
+        <Col md={4}>
+          <GoalProgressCard
+            savingsLeft={savingsLeft}
+            savingsGoal={savingsGoal}
           />
         </Col>
       </Row>

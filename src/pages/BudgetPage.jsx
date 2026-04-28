@@ -3,6 +3,8 @@ import ExpenseList from '../components/ExpenseList'
 import IncomeForm from '../components/IncomeForm'
 import ExpenseForm from '../components/ExpenseForm'
 import BudgetOverview from '../components/BudgetOverview'
+import SavingsGoalForm from '../components/SavingsGoalForm'
+import GoalProgressCard from '../components/GoalProgressCard'
 
 function BudgetPage({
   monthlyIncome,
@@ -11,6 +13,8 @@ function BudgetPage({
   setExpenses,
   totalExpenses,
   savingsLeft,
+  savingsGoal,
+  setSavingsGoal,
 }) {
   const deleteExpense = (idToDelete) => {
     setExpenses(expenses.filter((expense) => expense.id !== idToDelete))
@@ -20,19 +24,26 @@ function BudgetPage({
     <Container className="py-4">
       <h1 className="mb-3">Budget</h1>
       <p className="mb-4">
-        Enter your monthly income and add expenses from scratch. The Home page summary
-        updates automatically.
+        Enter your monthly income, savings goal, and expenses. The summary updates
+        automatically across the site.
       </p>
 
       <Row className="g-4">
-        <Col md={6}>
+        <Col md={4}>
           <IncomeForm
             monthlyIncome={monthlyIncome}
             setMonthlyIncome={setMonthlyIncome}
           />
         </Col>
 
-        <Col md={6}>
+        <Col md={4}>
+          <SavingsGoalForm
+            savingsGoal={savingsGoal}
+            setSavingsGoal={setSavingsGoal}
+          />
+        </Col>
+
+        <Col md={4}>
           <BudgetOverview
             totalExpenses={totalExpenses}
             savingsLeft={savingsLeft}
@@ -49,9 +60,15 @@ function BudgetPage({
 
         <Col md={6}>
           <Card className="p-3 shadow-sm h-100">
-            <h5 className="mb-3">Expense List</h5>
+            <h2 className="h5 mb-3">Expense List</h2>
             <ExpenseList expenses={expenses} onDeleteExpense={deleteExpense} />
           </Card>
+        </Col>
+      </Row>
+
+      <Row className="g-4 mt-1">
+        <Col md={6}>
+          <GoalProgressCard savingsLeft={savingsLeft} savingsGoal={savingsGoal} />
         </Col>
       </Row>
     </Container>

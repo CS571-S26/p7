@@ -4,8 +4,8 @@ function SummaryCard({ title, value, text }) {
   return (
     <Card className="h-100 shadow-sm">
       <Card.Body>
-        <Card.Title>{title}</Card.Title>
-        <h3>{value}</h3>
+        <Card.Title as="h2" className="h5">{title}</Card.Title>
+        <p className="display-6 fw-bold">{value}</p>
         <Card.Text>{text}</Card.Text>
       </Card.Body>
     </Card>

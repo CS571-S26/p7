@@ -7,26 +7,31 @@ function AboutPage() {
 
       <Card className="shadow-sm">
         <Card.Body>
+          <h2 className="h5">Project Goal</h2>
           <Card.Text>
-            This project is the Money Path Simulator, which helps people get a better
-            understanding of their spending and how it affects their savings over time.
+            Money Path Simulator helps people understand how monthly income,
+            expenses, and savings goals connect. The goal is to make budgeting
+            easier to visualize instead of only looking at numbers separately.
           </Card.Text>
 
+          <h2 className="h5">Current Features</h2>
           <Card.Text>
-            Right now, this is still an early version. So far, I have focused on setting
-            up the overall structure using React, adding routing between pages, and
-            building the layout with React Bootstrap.
+            Users can enter monthly income, set a savings goal, add expenses,
+            delete individual expenses, clear all expenses, and view updated
+            summaries across the app.
           </Card.Text>
 
+          <h2 className="h5">Design Choices</h2>
           <Card.Text>
-            I also created reusable components like the navigation bar, summary cards,
-            expense form, income form, budget overview, and an expense list to keep
-            everything organized.
+            I used React Bootstrap cards, spacing, rows, and columns to keep the
+            layout consistent. I also kept the design simple with clear sections
+            so users can understand the app quickly.
           </Card.Text>
 
+          <h2 className="h5">Accessibility</h2>
           <Card.Text>
-            Going forward, I plan to add more interactivity and allow users to explore
-            different budgeting scenarios in a more realistic way.
+            The app uses labeled form inputs, clear headings, keyboard-accessible
+            controls, and high-contrast text to make the site easier to use.
           </Card.Text>
         </Card.Body>
       </Card>

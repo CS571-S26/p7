@@ -8,6 +8,7 @@ import AboutPage from './pages/AboutPage'
 function App() {
   const [monthlyIncome, setMonthlyIncome] = useState('')
   const [expenses, setExpenses] = useState([])
+  const [savingsGoal, setSavingsGoal] = useState('')
 
   const parsedIncome = Number(monthlyIncome) || 0
   const totalExpenses = expenses.reduce((sum, expense) => sum + expense.amount, 0)
@@ -25,6 +26,7 @@ function App() {
               totalExpenses={totalExpenses}
               savingsLeft={savingsLeft}
               expenseCount={expenses.length}
+              savingsGoal={savingsGoal}
             />
           }
         />
@@ -38,6 +40,8 @@ function App() {
               setExpenses={setExpenses}
               totalExpenses={totalExpenses}
               savingsLeft={savingsLeft}
+              savingsGoal={savingsGoal}
+              setSavingsGoal={setSavingsGoal}
             />
           }
         />
